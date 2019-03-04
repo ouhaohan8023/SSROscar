@@ -106,6 +106,8 @@ Route::group(['middleware' => ['isForbidden', 'isLogin', 'isAdmin']], function (
     Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index'); // 系统运行日志
     Route::any('admin/profile', 'AdminController@profile'); // 修改个人信息
     Route::get('admin/makePort', 'AdminController@makePort'); // 生成端口
+    Route::get('admin/test', 'AdminController@test');
+
 });
 
 Route::group(['middleware' => ['isForbidden', 'isLogin']], function () {

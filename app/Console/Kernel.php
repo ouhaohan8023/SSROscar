@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Console\Commands\AutoTele;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -31,6 +32,7 @@ class Kernel extends ConsoleKernel
         \App\Console\Commands\upgradeUserSubscribe::class,
         \App\Console\Commands\upgradeUserVmessId::class,
         \App\Console\Commands\AutoReportNode::class,
+        AutoTele::class
     ];
 
     /**
@@ -55,6 +57,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('userExpireAutoWarning')->dailyAt('20:00');
         $schedule->command('userTrafficAutoWarning')->dailyAt('10:30');
         $schedule->command('autoReportNode')->dailyAt('09:00');
+        $schedule->command('autoTele')->everyMinute();
     }
 
     /**

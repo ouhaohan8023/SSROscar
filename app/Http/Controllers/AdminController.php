@@ -2619,4 +2619,9 @@ EOF;
             }
         }
     }
+
+    public function test()
+    {
+        dd(1);
+    }
 }
