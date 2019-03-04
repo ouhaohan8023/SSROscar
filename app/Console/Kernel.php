@@ -57,7 +57,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('userExpireAutoWarning')->dailyAt('20:00');
         $schedule->command('userTrafficAutoWarning')->dailyAt('10:30');
         $schedule->command('autoReportNode')->dailyAt('09:00');
-        $schedule->command('autoTele')->everyMinute();
+        $schedule->command('autoTele')->dailyAt('20:55');
     }
 
     /**
